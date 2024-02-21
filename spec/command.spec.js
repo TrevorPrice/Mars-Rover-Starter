@@ -16,7 +16,7 @@ describe("Command class", function() {
 
   it("constructor sets a value passed in as the 2nd argument", function() {
     let testCommand = new Command("MOVE", 12000);
-    expect(testCommand.value).toBe(12000);
+    expect(testCommand.value).toBe(12000); 
   });
 
 });
