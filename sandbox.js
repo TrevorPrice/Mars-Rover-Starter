@@ -1,5 +1,27 @@
-const Message = require("./message");
-const Command = require("./command");
+class Command {
+  constructor(commandType, value) {
+    this.commandType = commandType;
+    if (!commandType) {
+      throw Error("Command type required.");
+    }
+    this.value = value;
+  }
+}
+// let modeCommand = new Command("MODE_CHANGE", "LOW_POWER");
+// let moveCommand = new Command("MOVE", 12000);
+
+// console.log(modeCommand);
+// console.log(moveCommand);
+
+class Message {
+  constructor(name, commands = []) {
+    this.name = name;
+    if (!name) {
+      throw Error("Name required.");
+    }
+    this.commands = commands;
+  }
+}
 
 class Rover {
   // Write code here!
@@ -45,9 +67,6 @@ class Rover {
   }
 }
 
-module.exports = Rover;
-
-//Delete code below after finishing
 let rover = new Rover(100);
 let commands = [
   new Command("MOVE", 4321),
